@@ -1,0 +1,61 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Semana2_Ejercicio3
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // EJERCICIO 3
+            // Desarrollar un programa que solicite al usuario un numero entero y mostrar en pantalla
+            // un mensaje que indique al usuario si se trata de un numero par o impar.
+
+            //Variables a utilizar
+            int numero, resultado;
+            string validarEntero;
+
+            Console.WriteLine("-----------------------------------------------------------------");
+            Console.WriteLine("PROGRAMA QUE CALCULA SI UN NUMERO ENTERO INGRESADO ES PAR O IMPAR");
+            Console.WriteLine("-----------------------------------------------------------------");
+
+            Console.WriteLine("\nIngrese el un numero entero");
+            validarEntero = Console.ReadLine();
+
+            // Nos aseguramos que el numero que ingrese el usuario es entero, sino dara error el programa
+            // para eso usamos un TryParse que intentara convertir un string a entero.
+            // Si tiene exito entra sino manda al else.
+            if (int.TryParse(validarEntero, out numero))
+            {
+                resultado = numero % 2;
+
+                // Limpiar pantalla
+                Console.Clear();
+
+                if (resultado == 0)
+                {
+                    Console.WriteLine("--------------------------------------");
+                    Console.WriteLine($"El numero {numero} ingresado es PAR");
+                    Console.WriteLine("--------------------------------------");
+                }
+                else
+                {
+                    Console.WriteLine("--------------------------------------");
+                    Console.WriteLine($"El numero {numero} ingresado es IMPAR");
+                    Console.WriteLine("--------------------------------------");
+                }
+            }
+            else
+            {
+                Console.WriteLine("ERROR: Debe ingresar un numero entero, no decimal, ni texto");
+            }
+            
+
+            Console.ReadKey();
+            
+        }
+    }
+}
