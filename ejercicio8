@@ -1,0 +1,66 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Semana2_Ejercicio8
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // EJERCICIO 8
+            // 
+
+            Console.WriteLine("Cuantos numeros quiere calcular?");
+            int cantidad = int.Parse(Console.ReadLine());
+
+            for (int i = 0; i < cantidad; i ++)
+            {
+                Console.WriteLine($"Numero positivo {i +1}: ");
+                int numero = int.Parse(Console.ReadLine());
+
+                if (EsNumeroPerfecto(numero))
+                {
+                    Console.WriteLine($"{numero} es un número perfecto.");
+                }
+                else
+                {
+                    Console.WriteLine($"{numero} no es un número perfecto.");
+                }
+            }
+
+            numPerfectosUnoaMil();
+           
+            Console.ReadKey();
+        }
+
+        static bool EsNumeroPerfecto(int numero)
+        {
+            int sumaFactores = 1; // Comenzamos con 1 como factor inicial.
+
+            for (int i = 2; i <= numero / 2; i++)
+            {
+                if (numero % i == 0)
+                {
+                    sumaFactores += i;
+                }
+            }
+
+            return sumaFactores == numero;
+        }
+
+        static void numPerfectosUnoaMil()
+        {
+            Console.WriteLine("Números perfectos entre 1 y 1000:");
+            for (int i = 1; i <= 1000; i++)
+            {
+                if (EsNumeroPerfecto(i))
+                {
+                    Console.WriteLine(i);
+                }
+            }
+        }
+    }
+}
