@@ -1,0 +1,57 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Semana2_Ejercicio1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // EJERCICIO 1
+            // Desarrollar un programa en el cual se ingresen cuatro numeros, calcular y mostrar la suma de los
+            // dos primeros y el producto del tercero con el cuarto.
+
+            // Declarar variables a utilizar
+            double totalSuma, totalProducto;
+            double num1, num2, num3, num4;
+
+            Console.WriteLine("-----------------------------------------------");
+            Console.WriteLine("SUMA DE NUMEROS 1 Y 2, PRODUCTO DE NUMEROS 3 Y 4");
+            Console.WriteLine("-----------------------------------------------");
+
+            Console.WriteLine("Digite el primer numero: ");
+            num1 = double.Parse(Console.ReadLine());
+
+            Console.WriteLine("Digite el segundo numero: ");
+            num2 = double.Parse(Console.ReadLine());
+
+            Console.WriteLine("Digite el tercer numero: ");
+            num3 = double.Parse(Console.ReadLine());
+
+            Console.WriteLine("Digite el cuarto numero: ");
+            num4 = double.Parse(Console.ReadLine());
+            
+            // Limpiando pantalla
+            Console.Clear();
+
+            // Realizando las operaciones
+            totalSuma = num1 + num2;
+            totalProducto = num3 * num4;
+
+            // Imprimir resultados.
+
+            Console.WriteLine($"Los numeros ingresados son: N°1: {num1}, N°2: {num2}, N°3: {num3}, N°4: {num4}");
+
+            Console.WriteLine("-----------------------------------------------------------");
+            Console.WriteLine($"La suma del numero 1 y el numero 2 es: {totalSuma}");
+            Console.WriteLine($"El producto del numero 3 y el numero 4 es: {totalProducto}");
+            Console.WriteLine("-----------------------------------------------------------");
+
+            Console.ReadKey();
+        }
+
+    }
+}
