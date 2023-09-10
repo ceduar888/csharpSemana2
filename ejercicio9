@@ -1,0 +1,57 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Semana2_Ejercicio9
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int numTerminos;
+
+            while (true)
+            {
+                Console.WriteLine("Número de términos para calcular π:");
+                string input = Console.ReadLine();
+
+                if (int.TryParse(input, out numTerminos) && numTerminos > 0)
+                {
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Por favor, ingresa un número válido mayor que 0.");
+                }
+            }
+
+            double piAproximado = CalcularPi(numTerminos);
+
+            Console.WriteLine($"Valor aproximado de π con {numTerminos} términos: {piAproximado}");
+            Console.ReadKey();
+        }
+
+        static double CalcularPi(int n)
+        {
+            double pi = 0.0;
+
+            for (int i = 0; i < n; i++)
+            {
+                double termino = 4.0 / (2 * i + 1);
+
+                if (i % 2 == 0)
+                {
+                    pi += termino;
+                }
+                else
+                {
+                    pi -= termino;
+                }
+            }
+
+            return pi;
+        }
+    }
+}
