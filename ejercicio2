@@ -1,0 +1,56 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Semana2_Ejercicio2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // EJERCICIO 2
+            // Se debe desarrollar un programa que pida el ingreso del precio de un articulo y
+            // la cantidad que lleva el cliente. Mostrar lo que debe pagar el comprador
+
+            //Variables
+            string articulo;
+            int cantidad;
+            double totalPagar, precio;
+
+            Console.WriteLine("----------------------------------------");
+            Console.WriteLine("TOTAL A PAGAR POR ARTICULOS A LLEVAR");
+            Console.WriteLine("----------------------------------------");
+
+            Console.WriteLine("Ingrese el nombre del producto: ");
+            articulo = Console.ReadLine();
+
+            Console.WriteLine("Ingrese el precio del producto: ");
+            precio = double.Parse(Console.ReadLine());
+
+            Console.WriteLine($"Ingrese la cantidad de {articulo} que lleva el cliente: ");
+            cantidad = int.Parse(Console.ReadLine());
+
+            // Proceso de calculo.
+            totalPagar = precio * cantidad;
+
+            // Limpiando pantalla
+            Console.Clear();
+
+            // Imprimiendo resultados
+            Console.WriteLine("----------------------------------------------------------------");
+            Console.WriteLine($"El total a pagar por {cantidad} {articulo} es de: ${totalPagar}");
+            Console.WriteLine("----------------------------------------------------------------");
+
+            Console.ReadKey();
+
+
+
+
+
+
+
+        }
+    }
+}
