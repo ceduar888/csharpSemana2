@@ -1,0 +1,72 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Semana2_Ejercicio4
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Desarrollar un programa que indique cual de tres numeros ingresados por el usuario
+            // es el mayor y cual es el menor
+
+            double num1, num2, num3;
+            double numMayor, numMenor;
+
+            Console.WriteLine("----------------------------------------------------------------");
+            Console.WriteLine("PROGRAMA QUE CALCULA CUAL DE TRES NUMERO ES EL MAYOR Y EL MENOR");
+            Console.WriteLine("----------------------------------------------------------------");
+
+            Console.WriteLine("\nIngrese el primer numero: ");
+            num1 = double.Parse(Console.ReadLine());
+
+            Console.WriteLine("\nIngrese el segundo numero: ");
+            num2 = double.Parse(Console.ReadLine());
+
+            Console.WriteLine("\nIngrese el tercer numero: ");
+            num3 = double.Parse(Console.ReadLine());
+
+            // Inicializamos al mayor y al menor como el primer numero para solo hacer dos comparacion
+
+            numMayor = num1;
+            numMenor = num1;
+
+            // Calculamos primero el numero mayor
+            if (num2 > numMayor)
+            {
+                numMayor = num2;
+            }
+
+            if (num3 > numMayor)
+            {
+                numMayor = num3;
+            }
+
+            // Calculamos el numero menor
+            if (num2 < numMenor)
+            {
+                numMenor = num2;
+            }
+
+            if (num3 < numMenor)
+            {
+                numMenor = num3;
+            }
+
+            // Limpiar pantalla
+            Console.Clear();
+
+            // Imprimir resultados
+            Console.WriteLine("--------------------------------");
+            Console.WriteLine($"El numero mayor es: {numMayor}");
+            Console.WriteLine($"El numero menor es: {numMenor}");
+            Console.WriteLine("--------------------------------");
+
+            Console.ReadKey();
+
+        }
+    }
+}
