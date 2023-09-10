@@ -1,0 +1,70 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Semana2_Ejercicio5
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Desarrollar un metodo dentro de C#, que reciba un numero entero por parametro y devuelva un valor booleano 
+            // que indique si se trata de un numero primo o no.
+
+            int numero;
+            bool bandera;
+            Console.WriteLine("-------------------------------------------------------");
+            Console.WriteLine("PROGRAMA QUE CALCULA SI UN NUMERO ENTERO ES PRIMO O NO");
+            Console.WriteLine("-------------------------------------------------------");
+
+            Console.WriteLine("\nIngrese un numero entero: ");
+            numero = int.Parse(Console.ReadLine());
+
+            bandera = esPrimo(numero);
+
+            if (bandera)
+            {
+                Console.WriteLine($"El numero {numero} ES PRIMO.");
+            }
+            else
+            {
+                Console.WriteLine($"El numero {numero} NO ES PRIMO");
+            }
+
+            Console.ReadKey();
+        }
+
+        // METODO 
+        static bool esPrimo(int numero)
+        {
+            // Por definicion un numero negativo no puede ser primo
+            if (numero <= 1)
+            {
+                return false;
+            }
+                
+
+            // El 2 y 3 ya sabemos que son numeros primos. Si se ingresa cualquiera de los 2 se devuelve TRUE 
+            if (numero <= 3)
+            {
+                return true;
+            }
+
+            // Comprobamos si el número es divisible por 2 o 3.
+            if (numero % 2 == 0 || numero % 3 == 0)
+                return false;
+
+            // Comprobamos divisibilidad para números mayores a 3.
+            // Observamos solo números hasta la raíz cuadrada del número dado.
+            for (int i = 5; i * i <= numero; i += 6)
+            {
+                if (numero % i == 0 || numero % (i + 2) == 0)
+                    return false;
+            }
+
+            return true;
+        }
+    }
+}
