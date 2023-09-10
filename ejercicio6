@@ -1,0 +1,50 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Semana2_Ejercicio6
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // EJERCICIO 6
+            // Investigar la forma de implementacion del FOREACH dentro de un programa y desarrolle un ejemplo en C#
+
+            int[] numeros = new int[5]; // Crear un arreglo de enteros con tamaño 5
+
+            Console.WriteLine("USO DE FOREACH");
+            Console.WriteLine("-------------------------------------------------------------------");
+            Console.WriteLine("PROGRAMA QUE INGRESA 5 NUMEROS ENTEROS Y SE MUESTRAN CON UN FOREACH");
+            Console.WriteLine("-------------------------------------------------------------------");
+            Console.WriteLine("\nIngresa 5 números enteros:");
+
+            for (int i = 0; i < 5; i++)
+            {
+                Console.Write($"Digita el numero {i + 1}: ");
+                if (int.TryParse(Console.ReadLine(), out int numero))
+                {
+                    numeros[i] = numero;
+                }
+                else
+                {
+                    Console.WriteLine("Entrada inválida. Debes ingresar un número entero.");
+                    i--; // Para permitir que el usuario ingrese el número nuevamente.
+                }
+            }
+
+            Console.WriteLine("\nLos números ingresados son:");
+
+            // El FOREACH se usa para recorrer una lista, arreglo o atriz una vez e
+            // imprimir los datos que contiene
+            foreach (int numero in numeros)
+            {
+                Console.WriteLine(numero);
+            }
+
+            Console.ReadKey();
+        }
+    }
+}
